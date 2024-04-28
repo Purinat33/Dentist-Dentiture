@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colorful Circle</title>
     <style>
+        .row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
         .circle-container {
             display: inline-block;
             margin: 10px;
@@ -20,7 +26,7 @@
             border: 1px solid black;
             position: relative;
             overflow: hidden;
-            transform: scale(0.8);
+            transform: scale(0.4);
             margin-bottom: 20px;
         }
 
@@ -67,12 +73,11 @@
 
         /* Center h3 horizontally and 2px below the shape */
         h3 {
-            position: absolute;
-            top: calc(100% + 2px);
-            /* Position 2px below the bottom of the shape */
-            left: 50%;
-            transform: translateX(-50%);
-            margin: 0;
+            position: relative;
+            top: 100%; /* Move the text below the shape */
+            margin-top: 0.6px; /* Adjust this value for spacing */
+            transform: translateY(-100%);
+            margin-bottom: 0;
             text-align: center;
         }
     </style>
@@ -130,6 +135,7 @@
         </div>
         <h3>Shape 5</h3>
     </div>
+
 
     <script>
         // Function to generate a random color
