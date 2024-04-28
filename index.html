@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colorful Circle</title>
     <style>
-        #circle {
+        .circle-container {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .circle {
             width: 200px;
             height: 200px;
             background-color: white;
@@ -15,20 +20,20 @@
             position: relative;
             overflow: hidden;
             transform: scale(0.8);
+            margin-bottom: 20px;
         }
 
         .inner-circle {
             width: 80px;
             height: 80px;
-            background-color: white; /* Background color for the inner circle */
+            background-color: white;
             border-radius: 50%;
             position: absolute;
             top: 50%;
             border: 1px solid black;
-
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 1; /* Ensure the inner circle appears above the quadrants */
+            z-index: 1;
         }
 
         .quadrant {
@@ -63,12 +68,50 @@
 
 <body>
 
-    <div id="circle">
-        <div class="inner-circle"></div>
-        <div class="quadrant top-left"></div>
-        <div class="quadrant top-right"></div>
-        <div class="quadrant bottom-left"></div>
-        <div class="quadrant bottom-right"></div>
+    <div class="circle-container">
+        <div class="circle">
+            <div class="inner-circle"></div>
+            <div class="quadrant top-left"></div>
+            <div class="quadrant top-right"></div>
+            <div class="quadrant bottom-left"></div>
+            <div class="quadrant bottom-right"></div>
+        </div>
+    </div>
+    <div class="circle-container">
+        <div class="circle">
+            <div class="inner-circle"></div>
+            <div class="quadrant top-left"></div>
+            <div class="quadrant top-right"></div>
+            <div class="quadrant bottom-left"></div>
+            <div class="quadrant bottom-right"></div>
+        </div>
+    </div>
+    <div class="circle-container">
+        <div class="circle">
+            <div class="inner-circle"></div>
+            <div class="quadrant top-left"></div>
+            <div class="quadrant top-right"></div>
+            <div class="quadrant bottom-left"></div>
+            <div class="quadrant bottom-right"></div>
+        </div>
+    </div>
+    <div class="circle-container">
+        <div class="circle">
+            <div class="inner-circle"></div>
+            <div class="quadrant top-left"></div>
+            <div class="quadrant top-right"></div>
+            <div class="quadrant bottom-left"></div>
+            <div class="quadrant bottom-right"></div>
+        </div>
+    </div>
+    <div class="circle-container">
+        <div class="circle">
+            <div class="inner-circle"></div>
+            <div class="quadrant top-left"></div>
+            <div class="quadrant top-right"></div>
+            <div class="quadrant bottom-left"></div>
+            <div class="quadrant bottom-right"></div>
+        </div>
     </div>
 
     <script>
@@ -90,10 +133,12 @@
             });
         });
 
-        // Add click event listener to the inner circle
-        var innerCircle = document.querySelector('.inner-circle');
-        innerCircle.addEventListener('click', function () {
-            this.style.backgroundColor = getRandomColor();
+        // Add click event listener to the inner circle of each circle container
+        var innerCircles = document.querySelectorAll('.inner-circle');
+        innerCircles.forEach(function (innerCircle) {
+            innerCircle.addEventListener('click', function () {
+                this.style.backgroundColor = getRandomColor();
+            });
         });
     </script>
 
