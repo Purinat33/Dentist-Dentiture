@@ -6,14 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colorful Circle</title>
     <style>
+        body{
+            zoom: 50%;
+        }
+        .container {
+            overflow-x: auto;
+            /* Enable horizontal scrolling */
+            white-space: nowrap;
+            /* Prevent wrapping of rows */
+            border: 2px solid black;
+        }
+
         .row {
             display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
+            /* Enable horizontal scrolling */
+            padding-bottom: 20px;
+            /* Add some space at the bottom for better scrolling */
         }
 
         .circle-container {
-            display: inline-block;
+            flex-shrink: 0;
+            /* Prevent flex items from shrinking */
             margin: 10px;
             position: relative;
         }
@@ -71,72 +84,798 @@
             right: 0;
         }
 
-        /* Center h3 horizontally and 2px below the shape */
+         /* Center h3 horizontally and position it at the bottom of the shape */
         h3 {
-            position: relative;
-            top: 100%; /* Move the text below the shape */
-            margin-top: 0.6px; /* Adjust this value for spacing */
-            transform: translateY(-100%);
-            margin-bottom: 0;
+            position: absolute;
+            bottom: 50px; /* Adjust this value for alignment */
+            width: 100%;
             text-align: center;
+            margin: 0;
+        }
+
+        /* Style for the vertical line */
+        .vertical-line {
+            position: absolute;
+            left: calc(50% + 200px + 20px); /* Adjust the position based on your layout */
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: black;
+            z-index: 2; /* Ensure it's above the circles */
+        }
+
+        .vl {
+            border-left: 6px solid green;
+            height: 500px;
+            z-index: -1;
+        }
+
+        hr {
+        border: none;
+        border-top: 5px dotted black;
+        }
+
+        .letter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            left: 0;
+            right: 0;
+            width: 125%;
         }
     </style>
 </head>
 
-<body>
+<div class="container">
 
-    <div class="circle-container" id="1">
-        <div class="circle">
-            <div class="inner-circle"></div>
-            <div class="quadrant top-left"></div>
-            <div class="quadrant top-right"></div>
-            <div class="quadrant bottom-left"></div>
-            <div class="quadrant bottom-right"></div>
+    <div class="row">
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="1">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>18</h3>
         </div>
-        <h3>Shape 1</h3>
-    </div>
-    <div class="circle-container" id="2">
-        <div class="circle">
-            <div class="inner-circle"></div>
-            <div class="quadrant top-left"></div>
-            <div class="quadrant top-right"></div>
-            <div class="quadrant bottom-left"></div>
-            <div class="quadrant bottom-right"></div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="2">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>17</h3>
         </div>
-        <h3>Shape 2</h3>
-    </div>
-    <div class="circle-container" id="3">
-        <div class="circle">
-            <div class="inner-circle"></div>
-            <div class="quadrant top-left"></div>
-            <div class="quadrant top-right"></div>
-            <div class="quadrant bottom-left"></div>
-            <div class="quadrant bottom-right"></div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="3">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>16</h3>
         </div>
-        <h3>Shape 3</h3>
-    </div>
-    <div class="circle-container" id="4">
-        <div class="circle">
-            <div class="inner-circle"></div>
-            <div class="quadrant top-left"></div>
-            <div class="quadrant top-right"></div>
-            <div class="quadrant bottom-left"></div>
-            <div class="quadrant bottom-right"></div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="4">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>15</h3>
         </div>
-        <h3>Shape 4</h3>
-    </div>
-    <div class="circle-container" id="5">
-        <div class="circle">
-            <div class="inner-circle"></div>
-            <div class="quadrant top-left"></div>
-            <div class="quadrant top-right"></div>
-            <div class="quadrant bottom-left"></div>
-            <div class="quadrant bottom-right"></div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="5">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>14</h3>
         </div>
-        <h3>Shape 5</h3>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="6">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>13</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="7">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>12</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="8">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>11</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- THIS IS FOR VERTICAL -->
+        |<br>
+        |<br>
+        |<br>
+        |<br>|<br>
+        |<br>|<br>
+        |<br>|<br>
+        |<br>|<br>
+        |<br>
+        <!-- <div class="vt"></div>  -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="9">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>21</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="10">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>22</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="11">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>23</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="12">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>24</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="13">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>25</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="14">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>26</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="15">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>27</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="16">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>28</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
     </div>
 
-
+    <div class="row">
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17" style="opacity: 0;">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>55</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17" style="opacity: 0;">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>55</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17" style="opacity: 0;">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>55</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>55</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>54</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>53</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>52</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>51</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        |<br>
+        |<br>
+        |<br>
+        |<br>|<br>
+        |<br>|<br>
+        |<br>|<br>
+        |<br>|<br>
+        |<br>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>61</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>62</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>63</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>64</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>65</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+    </div>
+    <div class="letter">
+        <h1>R</h1>
+        <hr style="width: 200%;
+          left: 0;right: 0;">
+        <h1>L</h1>
+    </div>
+    
+    <div class="row">
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17" style="opacity: 0;">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>55</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17" style="opacity: 0;">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>55</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17" style="opacity: 0; pointer-events: none;">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>55</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>85</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>84</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>83</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>82</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>81</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        |<br>
+        |<br>
+        |<br>
+        |<br>|<br>
+        |<br>|<br>
+        |<br>|<br>
+        |<br>|<br>
+        |<br>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>71</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>72</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>73</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>74</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>75</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+    </div>
+    <div class="row">
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>48</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>47</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>46</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>45</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>44</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>43</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>42</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>41</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        |<br>
+        |<br>
+        |<br>
+        |<br>|<br>
+        |<br>|<br>
+        |<br>|<br>
+        |<br>|<br>
+        |<br>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>31</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>32</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>33</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>34</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>35</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>36</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>37</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <!-- Repeat the circle containers for all 25 shapes -->
+        <div class="circle-container" id="17">
+            <div class="circle">
+                <div class="inner-circle"></div>
+                <div class="quadrant top-left"></div>
+                <div class="quadrant top-right"></div>
+                <div class="quadrant bottom-left"></div>
+                <div class="quadrant bottom-right"></div>
+            </div>
+            <h3>38</h3>
+        </div>
+        <!-- Repeat the circle containers for all 25 shapes -->
+    </div>
+</div>
     <script>
         // Function to generate a random color
         function getRandomColor() {
